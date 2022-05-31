@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hover Effect</title>
+        <title>Button Effect</title>
         <style type="text/css">
             body{
                 font-family: sans-serif;
+                background-color: #000;
                 height: 100vh;
 
                 display: flex;
@@ -14,56 +15,47 @@
 
             a{
                 display: block;
-                color: #000;
                 text-decoration: none;
                 font-size: 40px;
-                border: 5px solid #000;
+                color: #fff;
+                border: 5px solid #fff;
 
                 padding: 40px 80px;
                 margin-bottom: 20px;
 
                 position: relative;
-
-                overflow: hidden;
             }
 
             a::before{
-                content: 'Press Me';
-
+                content: '';
                 width: 100%;
-                height: 100%;
-                background-color: steelblue;
-                color: #fff;
+                height: 30%;
+                background: #fff;
+                border-radius: 0 0 100% 0;
 
                 position: absolute;
-                top: 0;
                 left: 0;
+                top: 0;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                transform: scale(5);
-                opacity: 0;
+                z-index: -1;
 
                 transition: all 0.5s;
             }
 
             a:hover::before{
-                transform: scale(1);
-                opacity: 1;
+                height: 100%;
+                border-radius: 0 0 0 100%;
             }
 
-            a:active::before{
-                content: 'Thank You';
+            a:hover{
+                color: #000;
             }
 
             button{
                 background: none;
-                color: #000;
+                color: #fff;
                 font-size: 40px;
-                border: 5px solid #000;
-                cursor: pointer;
+                border: 5px solid #fff;
 
                 padding: 40px 80px;
 
@@ -71,66 +63,63 @@
             }
 
             button::before{
-                content: "Hover Me";
-
+                content: '';
                 width: 100%;
                 height: 100%;
-                background-color: steelblue;
-                color: #fff;
+                background: linear-gradient(
+                    90deg,
+                    red 50%,
+                    transparent 70%
+                );
 
                 position: absolute;
-                top: 0;
                 left: 0;
+                top: 0;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                z-index: -1;
 
-                transform: scale(1);
-
-                transition: all 0.5s;
+                transition: all 1s;
             }
 
             button::after{
-                content: "Press Me";
-
+                content: '';
                 width: 100%;
                 height: 100%;
-                background-color: yellow;
+                background: linear-gradient(
+                    270deg,
+                    blue 40%,
+                    transparent 70%
+                );
 
                 position: absolute;
-                top: 0;
                 left: 0;
+                top: 0;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                z-index: -1;
 
-                transform: scale(0);
-
-                transition: all 0.5s;
+                transition: all 1s;
             }
 
             button:hover::before{
-                transform: scale(0);
+                background: linear-gradient(
+                    270deg,
+                    red 50%,
+                    transparent 70%
+                );
             }
-
             button:hover::after{
-                transform: scale(1);
+                background: linear-gradient(
+                    90deg,
+                    blue 40%,
+                    transparent 70%
+                );
             }
-
-            button:active::after{
-                content: "Thank You";
-            }
-
         </style>
     </head>
     <body>
-        
         <div>
             <a href="#">Hover Me</a>
             <button type="button">Hover Me</button>
         </div>
-
     </body>
 </html>
