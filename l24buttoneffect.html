@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Button Effect</title>
+    <link href="./fontawesomepro/css/all.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            height: 100vh;
+            font-family: sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            color: #fff;
+            background: #34e7e4;
+            font-weight: 900;
+
+            border: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 25px 80px;
+            margin: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn::before {
+            content: '';
+            font-family: "Font Awesome 5 Pro";
+            width: 60px;
+            height: 100%;
+            font-size: 150%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            line-height: 3.5;
+        }
+
+        .download-btn::before {
+            content: "\f103";
+            background: #3867d6;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #40acc9;
+        }
+
+        .download-btn:hover::before {
+            line-height: 4;
+        }
+
+        .download-btn:active {
+            background: #3c6b78;
+        }
+
+        .upload-btn {
+            background: #0fbcf9;
+        }
+
+        .upload-btn::before {
+            content: '\f102';
+            background-color: #a55eea;
+            transition: all 0.3s;
+        }
+
+        .upload-btn:hover {
+            background-color: #45c2f0;
+        }
+
+        .upload-btn:active {
+            background-color: #440f73;
+        }
+
+        .upload-btn:hover::before {
+            line-height: 3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button" class="btn download-btn">Download Now</button>
+
+    <button type="button" class="btn upload-btn">Upload Now</button>
+
+
+
+</body>
+
+</html>
